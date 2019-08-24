@@ -1,4 +1,4 @@
-﻿___INFO___
+___INFO___
 
 {
   "displayName": "iplytics",
@@ -104,6 +104,16 @@ ___WEB_PERMISSIONS___
       ]
     },
     "isRequired": true
+  },
+  {
+    "instance": {
+      "key": {
+        "publicId": "read_event_metadata",
+        "versionId": "1"
+      },
+      "param": []
+    },
+    "isRequired": true
   }
 ]
 
@@ -118,6 +128,7 @@ log('data =', data);
 const queryPermission = require('queryPermission');
 const sendPixel = require('sendPixel');
 const query = require('queryPermission');
+const addEventCallback = require('addEventCallback');
 
 //collect refferal domains
 const getReferrerUrl = require('getReferrerUrl');
@@ -143,8 +154,22 @@ log("actaul host", hostGclid);
 log("actaul path", pathGclid);
 log("actaul extension", extensionGclid);
 
-//endpoint pixel get req
-sendPixel('https://api.iplytics.io/probe.js?' + "host=" + hostGclid + "&path=" + pathGclid + "&extension=" + extensionGclid + "&referrer=" + referrer);
+
+// save id for ref
+//const getCookieValues = require('getCookieValues');
+//const cookieName = 'adroll_pix_id';
+//let cookieValues;
+//if (queryPermission('get_cookies', cookieName)) {
+//  cookieValues = getCookieValues(cookieName);
+//}
+
+
+// send event callback
+addEventCallback(function(containerId, eventData) {
+  //endpoint pixel get req
+  sendPixel('https://api.iplytics.io/probe.js?' + "host=" + hostGclid + 		"&path=" + pathGclid + "&extension=" + extensionGclid + "&referrer=" + 		referrer );//+ "&cookie=" + cookieValues);
+
+});
 
 // Call data.gtmOnSuccess when the tag is finished.
 data.gtmOnSuccess();
@@ -152,4 +177,4 @@ data.gtmOnSuccess();
 
 ___NOTES___
 
-Created on 8/1/2019, 11:35:46 PM
+Created on 8/24/2019, 7:11:09 PM
