@@ -1,0 +1,5 @@
+homepage: "https://www.iplytics.io/",
+documentation: "https://www.iplytics.io/documentation",
+versions:
+  - sha: 30e4489a7e665a4e281f5688da388190bbcedc90
+    changeNotes: Initial Version
