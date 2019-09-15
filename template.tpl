@@ -129,6 +129,7 @@ const queryPermission = require('queryPermission');
 const sendPixel = require('sendPixel');
 const query = require('queryPermission');
 const addEventCallback = require('addEventCallback');
+const encodeUriComponent = require('encodeUriComponent');
 
 //collect refferal domains
 const getReferrerUrl = require('getReferrerUrl');
@@ -155,19 +156,10 @@ log("actaul path", pathGclid);
 log("actaul extension", extensionGclid);
 
 
-// save id for ref
-//const getCookieValues = require('getCookieValues');
-//const cookieName = 'adroll_pix_id';
-//let cookieValues;
-//if (queryPermission('get_cookies', cookieName)) {
-//  cookieValues = getCookieValues(cookieName);
-//}
-
-
 // send event callback
 addEventCallback(function(containerId, eventData) {
   //endpoint pixel get req
-  sendPixel('https://api.iplytics.io/probe.js?' + "host=" + hostGclid + 		"&path=" + pathGclid + "&extension=" + extensionGclid + "&referrer=" + 		referrer );//+ "&cookie=" + cookieValues);
+  sendPixel('https://api.iplytics.io/probe.js?' + "host=" + encodeUriComponent(hostGclid) + 		"&path=" + encodeUriComponent(pathGclid) + "&extension=" + encodeUriComponent(extensionGclid) + "&referrer=" + 		encodeUriComponent(referrer) );
 
 });
 
@@ -177,4 +169,4 @@ data.gtmOnSuccess();
 
 ___NOTES___
 
-Created on 8/24/2019, 7:11:09 PM
+Created on 9/15/2019, 7:11:09 PM
