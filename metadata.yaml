@@ -1,5 +1,5 @@
 homepage: "https://www.iplytics.io/",
 documentation: "https://www.iplytics.io/documentation",
 versions:
-  - sha: 9832fc0ce207605f5942d045f396055cf8d9a19e
-    changeNotes:  add terms and service
+  - sha: 56119d22b540ed6c0099d7000af73efc5820e09e
+    changeNotes:  icon added
