@@ -1,5 +1,5 @@
 homepage: "https://www.iplytics.io/",
 documentation: "https://www.iplytics.io/documentation",
 versions:
-  - sha: 56119d22b540ed6c0099d7000af73efc5820e09e
+  - sha: 385b417ca03ec6eb95e7917a54335a54ef8626b3
     changeNotes:  icon added
