@@ -9,7 +9,7 @@ ___INFO___
 
 {
   "displayName": "IPlytics",
-  "description": "",
+  "description": "The IP Lytics Template Provides IP Intelligence and Insights Within the Google Tag Manger Framework.",
   "categories": ["LEAD_GENERATION", "PERSONALIZATION", "REMARKETING", "SALES", "ANALYTICS", "ADVERTISING"],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
